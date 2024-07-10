@@ -55,7 +55,11 @@ module Prism
         # a and b
         # ^^^^^^^
         def visit_and_node(node)
-          s(node, :and, visit(node.left), visit(node.right))
+          if node.left.is_a?(AndNode)
+            s(node, :and, visit(node.left.left), s(node.left, :and, visit(node.left.right), visit(node.right)))
+          else
+            s(node, :and, visit(node.left), visit(node.right))
+          end
         end
 
         # []
@@ -1136,7 +1140,11 @@ module Prism
         # a or b
         # ^^^^^^
         def visit_or_node(node)
-          s(node, :or, visit(node.left), visit(node.right))
+          if node.left.is_a?(OrNode)
+            s(node, :or, visit(node.left.left), s(node.left, :or, visit(node.left.right), visit(node.right)))
+          else
+            s(node, :or, visit(node.left), visit(node.right))
+          end
         end
 
         # def foo(bar, *baz); end

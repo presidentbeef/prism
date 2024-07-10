@@ -1,3 +1,5 @@
 foo or bar
 
 foo || bar
+
+foo or bar or baz

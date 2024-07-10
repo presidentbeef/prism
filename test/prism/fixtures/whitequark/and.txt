@@ -1,3 +1,5 @@
 foo && bar
 
 foo and bar
+
+foo and bar and baz

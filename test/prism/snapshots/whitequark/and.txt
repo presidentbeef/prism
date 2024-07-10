@@ -1,10 +1,10 @@
-@ ProgramNode (location: (1,0)-(3,11))
+@ ProgramNode (location: (1,0)-(5,19))
 ├── flags: ∅
 ├── locals: []
 └── statements:
-    @ StatementsNode (location: (1,0)-(3,11))
+    @ StatementsNode (location: (1,0)-(5,19))
     ├── flags: ∅
-    └── body: (length: 2)
+    └── body: (length: 3)
         ├── @ AndNode (location: (1,0)-(1,10))
         │   ├── flags: newline
         │   ├── left:
@@ -30,28 +30,68 @@
         │   │   ├── closing_loc: ∅
         │   │   └── block: ∅
         │   └── operator_loc: (1,4)-(1,6) = "&&"
-        └── @ AndNode (location: (3,0)-(3,11))
+        ├── @ AndNode (location: (3,0)-(3,11))
+        │   ├── flags: newline
+        │   ├── left:
+        │   │   @ CallNode (location: (3,0)-(3,3))
+        │   │   ├── flags: variable_call, ignore_visibility
+        │   │   ├── receiver: ∅
+        │   │   ├── call_operator_loc: ∅
+        │   │   ├── name: :foo
+        │   │   ├── message_loc: (3,0)-(3,3) = "foo"
+        │   │   ├── opening_loc: ∅
+        │   │   ├── arguments: ∅
+        │   │   ├── closing_loc: ∅
+        │   │   └── block: ∅
+        │   ├── right:
+        │   │   @ CallNode (location: (3,8)-(3,11))
+        │   │   ├── flags: variable_call, ignore_visibility
+        │   │   ├── receiver: ∅
+        │   │   ├── call_operator_loc: ∅
+        │   │   ├── name: :bar
+        │   │   ├── message_loc: (3,8)-(3,11) = "bar"
+        │   │   ├── opening_loc: ∅
+        │   │   ├── arguments: ∅
+        │   │   ├── closing_loc: ∅
+        │   │   └── block: ∅
+        │   └── operator_loc: (3,4)-(3,7) = "and"
+        └── @ AndNode (location: (5,0)-(5,19))
             ├── flags: newline
             ├── left:
-            │   @ CallNode (location: (3,0)-(3,3))
-            │   ├── flags: variable_call, ignore_visibility
-            │   ├── receiver: ∅
-            │   ├── call_operator_loc: ∅
-            │   ├── name: :foo
-            │   ├── message_loc: (3,0)-(3,3) = "foo"
-            │   ├── opening_loc: ∅
-            │   ├── arguments: ∅
-            │   ├── closing_loc: ∅
-            │   └── block: ∅
+            │   @ AndNode (location: (5,0)-(5,11))
+            │   ├── flags: ∅
+            │   ├── left:
+            │   │   @ CallNode (location: (5,0)-(5,3))
+            │   │   ├── flags: variable_call, ignore_visibility
+            │   │   ├── receiver: ∅
+            │   │   ├── call_operator_loc: ∅
+            │   │   ├── name: :foo
+            │   │   ├── message_loc: (5,0)-(5,3) = "foo"
+            │   │   ├── opening_loc: ∅
+            │   │   ├── arguments: ∅
+            │   │   ├── closing_loc: ∅
+            │   │   └── block: ∅
+            │   ├── right:
+            │   │   @ CallNode (location: (5,8)-(5,11))
+            │   │   ├── flags: variable_call, ignore_visibility
+            │   │   ├── receiver: ∅
+            │   │   ├── call_operator_loc: ∅
+            │   │   ├── name: :bar
+            │   │   ├── message_loc: (5,8)-(5,11) = "bar"
+            │   │   ├── opening_loc: ∅
+            │   │   ├── arguments: ∅
+            │   │   ├── closing_loc: ∅
+            │   │   └── block: ∅
+            │   └── operator_loc: (5,4)-(5,7) = "and"
             ├── right:
-            │   @ CallNode (location: (3,8)-(3,11))
+            │   @ CallNode (location: (5,16)-(5,19))
             │   ├── flags: variable_call, ignore_visibility
             │   ├── receiver: ∅
             │   ├── call_operator_loc: ∅
-            │   ├── name: :bar
-            │   ├── message_loc: (3,8)-(3,11) = "bar"
+            │   ├── name: :baz
+            │   ├── message_loc: (5,16)-(5,19) = "baz"
             │   ├── opening_loc: ∅
             │   ├── arguments: ∅
             │   ├── closing_loc: ∅
             │   └── block: ∅
-            └── operator_loc: (3,4)-(3,7) = "and"
+            └── operator_loc: (5,12)-(5,15) = "and"
